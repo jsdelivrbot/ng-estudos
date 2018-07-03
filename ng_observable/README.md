@@ -47,6 +47,10 @@ throw() => throwError()
 fromPromise() => from() (this automatically detects the type)
 ```
 
+## Referências
+
+https://www.youtube.com/watch?v=S-_DcaNmr-I
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
