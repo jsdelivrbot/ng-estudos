@@ -25,6 +25,16 @@ export class AppComponent {
       );
 ```
 
+Para  objecto faça
+
+```html
+    <sectioin *ngIf="userResult | async as user">
+      {{ user.name }}
+      {{ user.age }}
+      {{ user.email }}
+    </section>
+```
+
 ## Os seguintes operadores foram renomeados na versão RxJs 6
 
 ```
