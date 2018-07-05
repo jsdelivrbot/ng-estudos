@@ -1,6 +1,9 @@
-# PetStore
+# Angular Rotas
+Estudo sobre Angular Router. 
 
-
+<p align="center">
+    <img width="800" src="docs/router.svg">
+</p>
 
 ## ngx-qrcode2
 
