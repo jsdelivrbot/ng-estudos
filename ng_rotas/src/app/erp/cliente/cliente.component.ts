@@ -28,7 +28,7 @@ export class ClienteComponent implements OnInit, AfterViewInit {
   fields: FormlyFieldConfig[] =
   [
     { key: 'nome', type: 'input', templateOptions: { type: 'text', label: 'Nome', placeholder: 'Entre nome', required: true, } },
-    { key: 'endereco', type: 'input', templateOptions: { type: 'text', label: 'Endereço', placeholder: 'Entre enderco', required: true,}},
+    { key: 'endereco', type: 'input', templateOptions: { type: 'text', label: 'Endereço', placeholder: 'Entre enderco', required: false,}},
     { key: 'cidade', type: 'input', templateOptions: { type: 'text', label: 'Cidade', placeholder: 'Entre cidade', required: true, } },
     { key: 'telefone', type: 'input', templateOptions: { type: 'text', label: 'Telefone', placeholder: 'Entre telefone', required: true,}},
     { key: 'email', type: 'input', templateOptions: { type: 'email', label: 'Email', placeholder: 'Entre email', required: true, } }
