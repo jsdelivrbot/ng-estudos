@@ -10,7 +10,7 @@ npm install -g @angular/cli
 ng new appdash
 cd appdash
 ng add ng-zorro-antd --i18n=en_US
-ng serve --port 0  
+ng serve --o --port 5000
 ```
 ## Documentação
 
