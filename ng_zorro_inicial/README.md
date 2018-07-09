@@ -1,7 +1,7 @@
 # NG Zorro
 
-[NG ZORRO](https://ng.ant.design/docs/getting-started/en)
-[ANT DESIGN]( http://2x.ant.design/components/layout/ )
+* [NG ZORRO](https://ng.ant.design/docs/getting-started/en) - Biblioteca de componentes angular 6
+* [ANT DESIGN]( http://2x.ant.design/components/layout/ ) - Framework CSS
 
 ## Instalação do zero
 
