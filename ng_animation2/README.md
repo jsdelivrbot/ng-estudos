@@ -1,4 +1,78 @@
-# Nganim
+# Integrando jQuery ao Angular
+
+## Instalando jQuery
+
+```
+npm i jquery
+```
+
+## Instalando plugin filterizr
+
+Aplica filtro sobre galerias de imagens com trsições CSS. http://yiotis.net/filterizr/
+
+```
+npm i filterizr
+```
+
+## Adcione os types em tsconfig.json
+
+```
+  "types":[
+    "jquery",
+    "filterizr"
+  ]
+```
+
+## Adicone scripts em angular.json
+
+```
+  "scripts": [
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/filterizr/dist/jquery.filterizr.min.js"
+```
+
+## Utilizando
+
+Exemplo de utilização:
+
+```javascript
+  import { Component, OnInit, ElementRef, AfterViewInit, NgZone } from '@angular/core';
+  declare var jQuery: any;
+
+  @Component({
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.css']
+  })
+  export class AboutComponent implements OnInit, AfterViewInit {
+    elementRef: ElementRef;
+
+    constructor( elementRef: ElementRef, private zone: NgZone) {
+        this.elementRef = elementRef;
+    }
+
+    ngAfterViewInit(): void {
+      this.filtrar();
+    }
+
+    ngOnInit() {
+    }
+
+    onClick() {
+      this.filtrar();
+    }
+
+    filtrar() {
+      this.zone.runOutsideAngular(() => {
+        jQuery('.filtr-container').filterizr();
+      });
+    }
+
+  }
+```
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
