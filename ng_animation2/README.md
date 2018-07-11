@@ -14,7 +14,7 @@ Aplica filtro sobre galerias de imagens com trsições CSS. http://yiotis.net/fi
 npm i filterizr
 ```
 
-## Adcione os types em tsconfig.json
+## Adicione os types em tsconfig.json
 
 ```
   "types":[
