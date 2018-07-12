@@ -3,7 +3,7 @@
 is an essential concept to understand before diving into your first Angular project. In this lesson, I provide four different methods for sharing data between Angular components.
 
 <p align="center">
-    <img width="800" alt="" src="../assets/comp.png">
+    <img width="800" alt="" src="assets/comp.png">
 </p>
 
 The Parent-Child-Sibling structure of our Angular app The Parent-Child-Sibling structure of our Angular app.
