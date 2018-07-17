@@ -1,4 +1,47 @@
-# Ngbuilder
+# Ngbuilder - Gerador de crud (Estudo)
+
+Usar code template como técni capara gerar crud Angular usando EJS.
+
+## Instalar EJS
+
+```
+npm i ejs
+```
+
+```
+angular.json
+
+ "scripts": [
+              "node_modules/ejs/ejs.js"
+            ]
+```
+
+## Exemplo
+
+```javascript
+app.component.ts
+
+import { Component } from '@angular/core';
+declare var  ejs: any;
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  templateInicial = '<p>Hello, my name is <%= people.nome %>. E-mail: <%= people.email %>.</p>';
+  tempProcessada = '';
+  people = { nome: 'Lyndon Tavares', email: 'integraldominio@gmail.com'};
+
+  processTemp() {
+    this.tempProcessada = ejs.render( this.templateInicial, {people: this.people});
+  }
+}
+
+```
+
+## Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 

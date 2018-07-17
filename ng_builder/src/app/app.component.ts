@@ -9,12 +9,12 @@ declare var  ejs: any;
 })
 export class AppComponent {
 
-  temp = '<p>Hello, my name is <%= people.nome %>. I\'m 100 years old.</p>';
+  templateInicial = '<p>Hello, my name is <%= people.nome %>. E-mail: <%= people.email %>.</p>';
   tempProcessada = '';
-  lyndon = { nome: 'Lyndon11', idade: 100};
+  people = { nome: 'Lyndon Tavares', email: 'integraldominio@gmail.com'};
 
   processTemp() {
-    this.tempProcessada = ejs.render( this.temp, {people: this.lyndon});
+    this.tempProcessada = ejs.render( this.templateInicial, {people: this.people});
   }
 
 }
