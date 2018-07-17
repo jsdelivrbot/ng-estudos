@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 declare var  ejs: any;
+declare var fs: any;
 
 @Component({
   selector: 'app-root',
@@ -51,7 +52,7 @@ export class AppComponent {
         } `;
 
   processTemp() {
-   this.tempProcessada = ejs.render( this.tplService, {artefato: this.artefato});
+     this.tempProcessada = ejs.render( this.tplService, {artefato: this.artefato});
   }
 
 }

@@ -5,7 +5,7 @@ Usar code template como técnca para gerar crud Angular usando EJS.
 ## Instalar EJS
 
 ```
-npm i ejs
+ npm i ejs
 ```
 
 ```
@@ -84,13 +84,127 @@ export class AppComponent {
   }
 
 }
+```
 
+## Tutorial do EJS
+
+### Opções
+
+* cache Compiled functions are cached, requires filename
+* filename Used by cache to key caches
+* scope Function execution context
+* debug Output generated function body
+* compileDebug When false no debug instrumentation is compiled
+* client Returns standalone compiled function
+* open Open tag, defaulting to "<%"
+* close Closing tag, defaulting to "%>"
+* All others are template-local variables
+
+### IF
+
+``` 
+
+<% if (user) { %>
+    <h2><%= user.name %></h2>
+<% } %>
 
 ```
 
+### Includes
+
+``` 
+<ul>
+  <% users.forEach(function(user){ %>
+    <% include user/show %>
+  <% }) %>
+</ul>
+```
+
+### Custom delimiters
+
+```
+var ejs = require('ejs');
+ejs.open = '{{';
+ejs.close = '}}';
+```
+
+```
+<h1>{{= title }}</h1>
+```
+
+### Filters
+
+```
+template
+
+<p><%=: users | map:'name' | join %></p>
+```
+
+```
+output
+
+<p>Tj, Mape, Guillermo</p>
+```
+```
+Render call:
+
+ejs.render(str, {
+    users: [
+      { name: 'tj' },
+      { name: 'mape' },
+      { name: 'guillermo' }
+    ]
+});
+```
+
+Captalize:
+```
+<p><%=: users | first | capitalize %></p>
+```
+
+### Filter List
+
+* first
+* last
+* capitalize
+* downcase
+* upcase
+* sort
+* sort_by:'prop'
+* size
+* length
+* plus:n
+* minus:n
+* times:n
+* divided_by:n
+* join:'val'
+* truncate:n
+* truncate_words:n
+* replace:pattern,substitution
+* prepend:val
+* append:val
+* map:'prop'
+* reverse
+* get:'prop'
+
+### Adding filters
+
+```
+<% include head %>
+<h1>Title</h1>
+<p>My page</p>
+<% include foot %>
+```
+
+
+
 ## Referências
 
-http://ejs.co/#install
+* https://www.javascripting.com/view/ejs
+* http://ejs.co/#install
+* http://www.embeddedjs.com/getting_started.html
+* http://www.embeddedjs.com/
+* https://www.devpleno.com/html-estatico-com-templates-ejs/
 
 ## Angular
 
