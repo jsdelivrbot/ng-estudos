@@ -9,12 +9,49 @@ declare var  ejs: any;
 })
 export class AppComponent {
 
-  templateInicial = '<p>Hello, my name is <%= people.nome %>. E-mail: <%= people.email %>.</p>';
-  tempProcessada = '';
-  people = { nome: 'Lyndon Tavares', email: 'integraldominio@gmail.com'};
+ artefato = {
+  restResource: 'clientes',
+  className: 'Cliente',
+  fields: [
+     { name: 'id', type: 'string'},
+     { name: 'nome', type: 'string'},
+     { name: 'email', type: 'string'}
+ ]};
+
+ tempProcessada = '';
+ tplService = `
+        import { Injectable } from '@angular/core';
+        import { HttpClient, HttpHeaders } from '@angular/common/http';
+        import { MessageService, ConfigService, ResourceService } from '../../infra/security';
+
+        @Injectable({
+          providedIn: 'root'
+        })
+        export class <%= artefato.className %>Service extends ResourceService<Cliente> {
+
+          constructor(
+            httpClient: HttpClient,
+            messageService: MessageService,
+            configService: ConfigService
+          ) {
+              super(
+              httpClient,
+              configService.getApiUrl(),
+              '<%= artefato.restResource %>',
+              messageService);
+          }
+        }
+
+        export class <%= artefato.className %> {
+
+          <% artefato.fields.forEach( f => { %>
+            <%=f.name%> = <%=f.type%> ,
+          <% }) %>
+
+        } `;
 
   processTemp() {
-    this.tempProcessada = ejs.render( this.templateInicial, {people: this.people});
+   this.tempProcessada = ejs.render( this.tplService, {artefato: this.artefato});
   }
 
 }
