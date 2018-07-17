@@ -1,6 +1,6 @@
 # Ngbuilder - Gerador de crud (Estudo)
 
-Usar code template como técni capara gerar crud Angular usando EJS.
+Usar code template como técnca para gerar crud Angular usando EJS.
 
 ## Instalar EJS
 
