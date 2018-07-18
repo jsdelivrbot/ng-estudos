@@ -46,7 +46,7 @@ export class AppComponent {
         export class <%= artefato.className %> {
 
           <% artefato.fields.forEach( f => { %>
-            <%=f.name%> = <%=f.type%> ,
+            <%=f.name%> : <%=f.type%> ,
           <% }) %>
 
         } `;
