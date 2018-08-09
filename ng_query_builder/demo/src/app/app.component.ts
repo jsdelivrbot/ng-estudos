@@ -55,8 +55,8 @@ export class AppComponent {
 
   public entityConfig: QueryBuilderConfig = {
     entities: {
-      physical: {name: 'Physical Attributes'},
-      nonphysical: {name: 'Nonphysical Attributes'}
+      physical: {name: 'Atibutos Físicos'},
+      nonphysical: {name: 'Atributos não físisos'}
     },
     fields: {
       age: {name: 'Age', type: 'number', entity: 'physical'},
