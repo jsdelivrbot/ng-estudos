@@ -1,8 +1,9 @@
 import { AngularFireDatabase  } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-
+import { auth } from 'firebase';
 
 @Component({
 
@@ -12,27 +13,55 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 
-   menu: Observable<any[]>;
+  menu: Observable<Menu[]>;
+  private iMenu: AngularFirestoreCollection<Menu>;
 
   constructor(
     private db: AngularFireDatabase,
     private fire: AngularFireAuth) {
+    //  this.fire.auth.signInWithEmailAndPassword('integraldominio@gmail.com', '010203')
+    //  .then(user => {
+    //    this.fire.authState.subscribe( _auth => {
+    //      if (_auth) {
+    //        console.log('>>>logou');
+            this.menu = db.list<Menu>('cardapio').valueChanges();
 
-      this.fire.auth.signInWithEmailAndPassword('integraldominio@gmail.com', '010203')
-      .then(user => {
-        this.fire.authState.subscribe( auth => {
-          if (auth) {
-            console.log('>>>logou');
-            this.menu = db.list('cardapio').valueChanges();
-          }
-      });
+    //      }
+    //  });
 
-    });
-
+    // });
    }
+
+  login() {
+    this.fire.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+  logout() {
+    this.fire.auth.signOut();
+  }
+
+  addItem(item: Menu) {
+    this.iMenu.add(item);
+  }
+
 
 }
 
+export interface Menu {
+  email: string;
+  firstName: string;
+  lastName: string;
+  estabelecimento: {cidade: string; endereco: string; nome: string; pais: string;};
+  horario: {segsex: number;  sabdom: number; };
+  mapa: {lat: number; lng: number; };
+  cardapio: [
+    {
+      nome: string;
+      texto: string;
+      preco: number;
+      ativo: boolean;
+    }
+  ];
+}
 
 /*
 https://jsoneditoronline.org/
