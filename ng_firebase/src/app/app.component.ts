@@ -1,5 +1,5 @@
 import { AngularFireDatabase  } from 'angularfire2/database';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { auth } from 'firebase';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
 
   menu: Observable<Menu[]>;
   private iMenu: AngularFirestoreCollection<Menu>;
@@ -26,6 +26,10 @@ export class AppComponent {
       .subscribe( (data) => {
           this.menu2 = data;
        });
+  }
+
+  ngOnDestroy() {
+
   }
 
   login() {
