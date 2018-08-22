@@ -42,3 +42,4 @@ ng_zorro_inicial/package-lock.json
 ng_flat_one/package-lock.json
 ng_menu_dinamico/package-lock.json
 ng_firebase/package-lock.json
+*.map

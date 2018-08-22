@@ -1,5 +1,14 @@
 # Fire1
 
+## Deploy firebase
+
+```
+npm install -g firebase-tools
+firebase login
+firebase init
+firebase deploy
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
 
 ## Development server
