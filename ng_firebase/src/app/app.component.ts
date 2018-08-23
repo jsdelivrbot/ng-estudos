@@ -2,7 +2,6 @@ import { AngularFireDatabase  } from 'angularfire2/database';
 import { Component, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
 import { auth } from 'firebase';
 import { Menu } from './menu';
 import { MenuService } from './menu.service';
@@ -22,6 +21,7 @@ export class AppComponent  {
   constructor(
     private menuService: MenuService,
     private db: AngularFireDatabase,
+    private store: AngularFirestore,
     private fire: AngularFireAuth) {
     this.menuListAll();
   }
@@ -33,6 +33,7 @@ export class AppComponent  {
   logout() {
     this.fire.auth.signOut();
   }
+
 
   menuAdd(): void {
     this.menu = new Menu();
