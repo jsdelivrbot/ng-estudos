@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'xxx',
-    authDomain: 'jsa-angular6.firebaseapp.com',
-    databaseURL: 'https://jsa-angular6.firebaseio.com',
-    projectId: 'jsa-angular6',
-    storageBucket: 'jsa-angular6.appspot.com',
-    messagingSenderId: 'xxx'
+    apiKey: 'AIzaSyBEswXIczagD7JnFmtCpmFP8BTH_Q5_VsI',
+    authDomain: 'menufacil-00001.firebaseapp.com',
+    databaseURL: 'https://menufacil-00001.firebaseio.com',
+    projectId: 'menufacil-00001',
+    storageBucket: 'menufacil-00001.appspot.com',
+    messagingSenderId: '168806655361'
   }
 };
