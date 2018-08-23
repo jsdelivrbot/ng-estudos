@@ -43,3 +43,4 @@ ng_flat_one/package-lock.json
 ng_menu_dinamico/package-lock.json
 ng_firebase/package-lock.json
 *.map
+ng_firebase_crud/
